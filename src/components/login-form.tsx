@@ -23,8 +23,8 @@ export function LoginForm() {
   }
   return (
     <form onSubmit={submit} className="login-form">
-      <h2>Inicia sesión</h2>
-      <p className="muted">Entra con tu cuenta de despacho o chofer.</p>
+      <h2>Iniciar sesión</h2>
+      <p className="muted">Usuario de despacho o de chofer.</p>
       <label>
         Usuario
         <input

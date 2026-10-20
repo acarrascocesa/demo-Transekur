@@ -10,10 +10,11 @@ import { today, dayRange } from "../../src/lib/time";
 import AxeBuilder from "@axe-core/playwright";
 
 const pool = new Pool({ connectionString: process.env.TEST_DATABASE_URL });
-const password = process.env.DEMO_PASSWORD;
-if (!password || password.length < 12) {
+const demoPassword = process.env.DEMO_PASSWORD;
+if (!demoPassword || demoPassword.length < 12) {
   throw new Error("Set DEMO_PASSWORD with at least 12 characters for e2e.");
 }
+const password: string = demoPassword;
 const origin = "http://localhost:3100";
 test.beforeEach(async () => {
   await pool.query("DELETE FROM login_attempts");
@@ -45,7 +46,11 @@ async function loginUi(page: Page, username: string) {
     username === "despacho" ? /\/despacho$/ : /\/chofer$/,
   );
   await expect(page.getByRole("heading", { level: 1 })).toContainText(
-    username === "despacho" ? "Despacho" : "Buen viaje",
+    username === "despacho"
+      ? "Despacho"
+      : username === "carlos"
+        ? "Carlos"
+        : "Miguel",
   );
   await page.evaluate(() => window.scrollTo(0, 0));
 }

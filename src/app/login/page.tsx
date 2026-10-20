@@ -17,17 +17,16 @@ export default async function LoginPage() {
         <section className="login-intro">
           <span className="intro-line" />
           <h1>
-            Un buen viaje
-            <br /> empieza antes
-            <br /> de subir.
+            Operaciones
+            <br /> Transekur
           </h1>
           <p>
-            Coordina cada recogida y mantén al cliente informado. Un aviso,
-            justo a tiempo.
+            Acceso para despacho y choferes. Coordina recogidas y avisa al
+            cliente cuando el vehículo esté cerca.
           </p>
           <div className="intro-detail">
             <Icon name="clock" />
-            <span>Despacho y choferes, conectados.</span>
+            <span>Avisos de llegada · República Dominicana</span>
           </div>
         </section>
         <LoginForm />

@@ -113,8 +113,8 @@ export function DriverBoard({
   return (
     <>
       <section className="driver-heading">
-        <p className="context-label">Tu jornada</p>
-        <h1>Buen viaje, {name.split(" ")[0]}.</h1>
+        <p className="context-label">Jornada</p>
+        <h1>{name.split(" ")[0]}</h1>
         <p className="muted">{dayLabel(data?.day ?? day)}</p>
       </section>
       <div className="driver-summary">

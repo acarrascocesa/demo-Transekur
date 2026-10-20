@@ -20,13 +20,8 @@ export function CustomerNotice({
   return (
     <main className="customer-main">
       <span className="demo-badge">Aviso simulado</span>
-      <div
-        className={`notice-symbol${info.notice ? " notice-symbol-sent" : ""}`}
-      >
-        <Icon name={info.notice ? "check" : "clock"} />
-      </div>
       <p className="context-label">
-        {info.notice ? "Tu recogida se acerca" : "Nos vemos pronto"}
+        {info.notice ? "Tu recogida" : "Preparando tu recogida"}
       </p>
       <h1>
         {info.notice
@@ -50,17 +45,8 @@ export function CustomerNotice({
         )}
       </div>
       <section className="customer-driver" aria-label="Tu chofer y vehículo">
-        <div className="driver-avatar" aria-hidden="true">
-          {info.driver.name
-            .split(" ")
-            .map((n) => n[0])
-            .slice(0, 2)
-            .join("")}
-        </div>
-        <div>
-          <span className="muted">Tu chofer</span>
-          <h2>{info.driver.name}</h2>
-        </div>
+        <span className="muted">Tu chofer</span>
+        <h2>{info.driver.name}</h2>
         <div className="customer-vehicle">
           <Icon name="car" />
           <div>

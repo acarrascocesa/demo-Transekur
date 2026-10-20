@@ -47,7 +47,7 @@ export function DispatchBoard({
         <div>
           <p className="context-label">Operaciones</p>
           <h1>Despacho</h1>
-          <p className="muted">Cada recogida, bajo control.</p>
+          <p className="muted">Agenda del día · asignación y avisos</p>
         </div>
         <CreateService
           drivers={drivers}
