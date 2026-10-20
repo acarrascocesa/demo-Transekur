@@ -9,10 +9,13 @@ export default async function setup() {
     !new URL(connectionString).pathname.endsWith("_test")
   )
     throw new Error("Refusing to modify a non-test database.");
+  const demoPassword = process.env.DEMO_PASSWORD;
+  if (!demoPassword || demoPassword.length < 12)
+    throw new Error("Set DEMO_PASSWORD with at least 12 characters for e2e.");
   const env = {
     ...process.env,
     DATABASE_URL: connectionString,
-    DEMO_PASSWORD: process.env.DEMO_PASSWORD ?? "Demo-Transekur-2026!",
+    DEMO_PASSWORD: demoPassword,
   };
   execFileSync(process.execPath, ["--import", "tsx", "scripts/migrate.ts"], {
     env,

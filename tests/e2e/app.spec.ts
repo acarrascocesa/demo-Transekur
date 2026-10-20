@@ -10,7 +10,10 @@ import { today, dayRange } from "../../src/lib/time";
 import AxeBuilder from "@axe-core/playwright";
 
 const pool = new Pool({ connectionString: process.env.TEST_DATABASE_URL });
-const password = process.env.DEMO_PASSWORD ?? "Demo-Transekur-2026!";
+const password = process.env.DEMO_PASSWORD;
+if (!password || password.length < 12) {
+  throw new Error("Set DEMO_PASSWORD with at least 12 characters for e2e.");
+}
 const origin = "http://localhost:3100";
 test.beforeEach(async () => {
   await pool.query("DELETE FROM login_attempts");

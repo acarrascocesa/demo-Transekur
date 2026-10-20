@@ -5,7 +5,7 @@ servicios; cada chofer ve sus servicios del día y emite un aviso; cliente y
 despacho lo consultan en pantalla. Todos los datos de ejemplo son ficticios.
 
 **Stack:** Next.js App Router, React, TypeScript, Tailwind CSS, PostgreSQL, `pg`,
-Argon2id y SWR. Sin Prisma, sin otros ORM y sin proveedores de mensajería.
+Argon2id y SWR. Sin ORM ni proveedores de mensajería.
 
 ## Probar el flujo
 
@@ -18,8 +18,8 @@ Argon2id y SWR. Sin Prisma, sin otros ORM y sin proveedores de mensajería.
 6. Entrar como `miguel` para comprobar que ve únicamente sus asignaciones.
 
 Las tres cuentas usan la contraseña definida en `DEMO_PASSWORD` al ejecutar la
-carga inicial. El valor de ejemplo es `Demo-Transekur-2026!`; cambiarlo antes de
-publicar. No hay registro público. Volver a ejecutar el seed **no cambia**
+carga inicial. Defínela en `.env` (mínimo 12 caracteres) y no la subas al
+repositorio. No hay registro público. Volver a ejecutar el seed **no cambia**
 contraseñas existentes ni borra avisos.
 
 ## Desarrollo local
